@@ -3,13 +3,13 @@ const TOKEN = require('./token');
 
 exports.handler = async(event, context, callback) => {
 
-  const vix = await vixParser();
+  const vix = await parseVix();
   const result = await postToSlack(vix);
 
   callback(null, result);
 };
 
-const vixParser = () => new Promise((resolve, reject) => {
+const parseVix = () => new Promise((resolve, reject) => {
 
   let vix = new Map();
   const options = {
