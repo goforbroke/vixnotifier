@@ -3,7 +3,7 @@ module.exports = {
   // Get API token from https://www.quandl.com/
   QUANDL_TOKEN: '<quandl web api token>',
   QUANDL_HOST: 'www.quandl.com',
-  QUANDL_PATH:`web api path`,
+  QUANDL_PATH:`<web api path>`,
   
   SLACK_HOST: 'hooks.slack.com',
   SLACK_CHANNEL: '<your post channel>',
