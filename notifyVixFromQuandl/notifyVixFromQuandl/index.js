@@ -1,5 +1,5 @@
 const https = require('https');
-const CONFIG = require('./token');
+const CONFIG = require('./config');
 const { WebClient } = require('@slack/client');
 
 exports.handler = async (event, context, callback) => {
