@@ -1,0 +1,14 @@
+{
+  "name": "vixnotifier",
+  "version": "1.0.0",
+  "description": "Vix notify to Slack",
+  "main": "notifyVixFromQuandl/notifyVixFromQuandl/index.js",
+  "repository": "https://github.com/goforbroke/vixnotifier.git",
+  "author": "goforbroke",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/client": "^5.0.2",
+    "chart.js": "^2.9.3",
+    "chartjs-node-canvas": "^3.0.6"
+  }
+}
