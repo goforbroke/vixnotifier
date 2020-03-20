@@ -18,35 +18,36 @@ const vixParser = () => new Promise((resolve, reject) => {
     path: `/api/v3/datasets/CBOE/VIX/data.json?limit=14&auth_token=${TOKEN.QUANDL}`,
   }
 
-    let body = '';
-    const req = https.request(options, (res) => {
-      res.on('data', (chunk) => {
-        body += chunk;
+  let body = '';
+  const req = https.request(options, (res) => {
+    res.on('data', (chunk) => {
+      body += chunk;
 
-      });
-
-      res.on('end', () => {
-        let vixJson = JSON.parse(body);
-        let element = '';
-        
-        vix.set("Source", "CBOE VIX");
-
-        // pic VIX data
-        // i=0:Date, i=1:VIX Open, i=2:VIX High, i=3:VIX Low, i=4:VIX Close
-        vixJson.dataset_data.column_names.forEach((v, i) => {
-          element = vixJson.dataset_data.data[0][i]
-          vix.set(v, element);
-        });
-        resolve(vix);
-      });
-    })
-
-    req.on('error', (e) => {
-      console.error(`problem with request: ${e.message}`);
-      reject(e);
     });
 
-    req.end();
+    res.on('end', () => {
+      let vixJson = JSON.parse(body);
+      let element = '';
+
+      vix.set("Source", "CBOE VIX");
+
+      // pic VIX data
+      // i=0:Date, i=1:VIX Open, i=2:VIX High, i=3:VIX Low, i=4:VIX Close
+      vixJson.dataset_data.column_names.forEach((v, i) => {
+        element = vixJson.dataset_data.data[0][i]
+        vix.set(v, element);
+      });
+      console.log(vix);
+      resolve(vix);
+    });
+  })
+
+  req.on('error', (e) => {
+    console.error(`problem with request: ${e.message}`);
+    reject(e);
+  });
+
+  req.end();
 });
 
 const postToSlack = (vixMap) => new Promise((resolve, reject) => {
