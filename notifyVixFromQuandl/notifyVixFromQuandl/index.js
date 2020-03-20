@@ -1,11 +1,12 @@
 const https = require('https');
-const VIX_URL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX/data.json?limit=7";
 const TOKEN = require('./token');
 
-exports.handler = async(event, context, callback) => {
+exports.handler = async (event, context, callback) => {
 
   const vix = await vixParser();
   vix.forEach(e => console.log(e));
+  const result = '';
+  // const result = await postToSlack(vix);
   callback(null, result);
 };
 
