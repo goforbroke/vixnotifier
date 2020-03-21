@@ -107,7 +107,7 @@ const postToSlack = (vixPng, todayVIX) => new Promise((resolve, reject) => {
     file: vixPng,
     filename: `CBOE VIX trend`,
     filetype: 'png',
-    initial_comment: `Last ${CONFIG.DAYS} days VIX, Today VIX is ${todayVIX}`,
+    initial_comment: `Last ${CONFIG.DAYS} days VIX. Today VIX is ${todayVIX}`,
   }
 
   web.files.upload(option)
