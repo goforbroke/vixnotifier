@@ -81,11 +81,10 @@ const vixDownload = () => new Promise((resolve, reject) => {
       vixSeries.data = [];
 
       // Parse vix series
-      const DATE_INDEX = 0, VIX_CLOSE_INDEX = 4;
-      // i=0:Date, i=1:VIX Open, i=2:VIX High, i=3:VIX Low, i=4:VIX Close
+      const DATE_INDEX = 0, VIX_INDEX = 1;
       vixJson.dataset_data.data.reverse().forEach((k, v) => {
         vixSeries.labels.push(k[DATE_INDEX]);
-        vixSeries.data.push(k[VIX_CLOSE_INDEX]);
+        vixSeries.data.push(k[VIX_INDEX]);
       });
       resolve(vixSeries);
     });
