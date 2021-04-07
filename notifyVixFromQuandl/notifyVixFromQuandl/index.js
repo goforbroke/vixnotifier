@@ -17,8 +17,11 @@ class GraphDrawer {
   // series = { labels: [<string>], data: [<number>] }
   constructor(series = {}) {
     this.series = series;
-    const { CanvasRenderService } = require('chartjs-node-canvas');
-    this.renderService = new CanvasRenderService(800, 600);
+    const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
+    this.renderService = new ChartJSNodeCanvas({
+      width: 800,
+      height: 600
+    });
     this.startDay = series.labels[0];
     this.endDay = series.labels[series.labels.length - 1];
     this.options = {
