@@ -1,3 +1,9 @@
+## Install
+
+```
+sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+```
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/goforbroke/vixnotifier/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
