@@ -4,6 +4,14 @@
 sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
 ```
 
+Set node PATH and time
+```
+PATH=/home/<user>/.nodenv/shims:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user  command
+x x * * mon-sat   <user>    node /home/<user>/vixnotifier/test/local.test.js
+```
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/goforbroke/vixnotifier/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
